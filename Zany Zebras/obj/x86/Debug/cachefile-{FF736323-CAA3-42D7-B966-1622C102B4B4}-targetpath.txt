@@ -1,0 +1,2 @@
+Zebra Resources\Fonts\gameText.xnb
+Zebra Resources\Sprites\zebra_leftright.xnb

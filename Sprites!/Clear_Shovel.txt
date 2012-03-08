@@ -1,0 +1,2 @@
+Shovel_clearbckgrnd = 0 0 32 32
+Shovel_selectedborder = 33 0 32 32

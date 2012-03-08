@@ -1,0 +1,21 @@
+c:\documents and settings\geoff gullekson\my documents\visual studio 2010\Projects\Zany Zebras\Zany Zebras\Zany Zebras\bin\x86\Debug\Zany Zebras.exe
+c:\documents and settings\geoff gullekson\my documents\visual studio 2010\Projects\Zany Zebras\Zany Zebras\Zany Zebras\bin\x86\Debug\Zany Zebras.pdb
+c:\documents and settings\geoff gullekson\my documents\visual studio 2010\Projects\Zany Zebras\Zany Zebras\Zany Zebras\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\documents and settings\geoff gullekson\my documents\visual studio 2010\Projects\Zany Zebras\Zany Zebras\Zany Zebras\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\documents and settings\geoff gullekson\my documents\visual studio 2010\Projects\Zany Zebras\Zany Zebras\Zany Zebras\obj\x86\Debug\Zany Zebras.exe
+c:\documents and settings\geoff gullekson\my documents\visual studio 2010\Projects\Zany Zebras\Zany Zebras\Zany Zebras\obj\x86\Debug\Zany Zebras.pdb
+c:\documents and settings\geoff gullekson\my documents\visual studio 2010\Projects\Zany Zebras\Zany Zebras\Zany Zebras\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\Jacob\Documents\Visual Studio 2010\Projects\Zany Zebras\bin\x86\Debug\Zany Zebras.exe
+C:\Users\Jacob\Documents\Visual Studio 2010\Projects\Zany Zebras\bin\x86\Debug\Zany Zebras.pdb
+C:\Users\Jacob\Documents\Visual Studio 2010\Projects\Zany Zebras\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jacob\Documents\Visual Studio 2010\Projects\Zany Zebras\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jacob\Documents\Visual Studio 2010\Projects\Zany Zebras\obj\x86\Debug\Zany Zebras.exe
+C:\Users\Jacob\Documents\Visual Studio 2010\Projects\Zany Zebras\obj\x86\Debug\Zany Zebras.pdb
+C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zany Zebras.exe
+C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zany Zebras.pdb
+C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\obj\x86\Debug\Zany Zebras.exe
+C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\obj\x86\Debug\Zany Zebras.pdb
+C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Fonts\gameText.xnb
+C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\zebra_leftright.xnb

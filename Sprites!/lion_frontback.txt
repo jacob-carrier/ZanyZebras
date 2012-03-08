@@ -1,0 +1,6 @@
+lionback1 = 0 0 32 64
+lionback2 = 33 0 32 64
+lionback3 = 66 0 32 64
+lionfront1 = 99 0 32 64
+lionfront2 = 132 0 32 64
+lionfront3 = 165 0 32 64

@@ -1,0 +1,6 @@
+zebraback1 = 0 0 32 64
+zebraback2 = 33 0 32 64
+zebraback3 = 66 0 32 64
+zebrafront1 = 99 0 32 64
+zebrafront2 = 132 0 32 64
+zebrafront3 = 165 0 32 64

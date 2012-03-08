@@ -1,0 +1,6 @@
+lionleft1 = 0 0 64 32
+lionleft2 = 0 33 64 32
+lionleft3 = 65 0 64 32
+lionright1 = 65 33 64 32
+lionright2 = 130 0 64 32
+lionright3 = 130 33 64 32

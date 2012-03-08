@@ -1,0 +1,6 @@
+zebraleft1 = 0 0 64 33
+zebraleft2 = 0 34 64 33
+zebraleft3 = 65 0 64 33
+zebraright1 = 65 34 64 32
+zebraright2 = 130 0 64 32
+zebraright3 = 130 33 64 32
