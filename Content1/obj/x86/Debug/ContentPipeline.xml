@@ -19,6 +19,24 @@
       <Output>C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\zebra_leftright.xnb</Output>
       <Time>2012-03-06T20:00:46.4364-05:00</Time>
     </Item>
+    <Item>
+      <Source>Sprites\map_tilesheet.png</Source>
+      <Name>Sprites\map_tilesheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\map_tilesheet.xnb</Output>
+      <Time>2012-03-08T11:26:39.1244-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\outline.png</Source>
+      <Name>Sprites\outline</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\outline.xnb</Output>
+      <Time>2012-03-08T13:20:06.6564-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
