@@ -22,7 +22,7 @@ namespace Zany_Zebras
             FontManager.Instance.Render("Paused the Game!", new Vector2(100,100));
         }
 
-        public override void Update()
+        public override void Update(GameTime gameTime)
         {
         }   
     }

@@ -1,2 +1,4 @@
 Zebra Resources\Fonts\gameText.xnb
 Zebra Resources\Sprites\zebra_leftright.xnb
+Zebra Resources\Sprites\map_tilesheet.xnb
+Zebra Resources\Sprites\outline.xnb

@@ -7,28 +7,12 @@ namespace Zany_Zebras
 {
     class Level
     {
-        private static Grid grid;
-        public static Grid Grid
+        private Grid grid;
+        public Grid Grid
         {
             get
             {
                 return grid;
-            }
-        }
-
-        private static Level _instance;
-        public static Level Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    throw new Exception("Level Instance is Null");
-                }
-                else
-                {
-                    return _instance;
-                }
             }
         }
 
@@ -37,7 +21,6 @@ namespace Zany_Zebras
         public Level()
         {
             grid = new Grid(15, 15);
-            _instance = this;
         }
 
         public void Reset()

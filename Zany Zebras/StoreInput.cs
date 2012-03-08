@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace Zany_Zebras
 {
@@ -12,12 +14,12 @@ namespace Zany_Zebras
 
         }
 
-        public override void mouseDown()
+        public override void Update()
         {
-        }
+            newState = Mouse.GetState();
 
-        public override void mouseUp()
-        {
+
+            oldState = newState;
         }
     }
 }

@@ -10,26 +10,33 @@ namespace Zany_Zebras
     class Tile
     {
         private Texture2D sheet;
-        private Rectangle src;
+        private Rectangle src, bounding;
         private Vector2 position;
         //Holds reference to the abilityManager to update/render/access them through tile Data
-        //IAbility ability;
+        IAbility ability;
         private Vector2 tileId;
         private int width;
         private int height;
         private Boolean occupied;
-        int abilityId;
 
-        public int AbilityId
+        public Rectangle BoundingBox
         {
             get
             {
-                return abilityId;
+                return bounding;
+            }
+        }
+
+        public IAbility Ability
+        {
+            get
+            {
+                return ability;
             }
 
             set
             {
-                abilityId = value;
+                ability = value;
             }
         }
 
@@ -66,9 +73,11 @@ namespace Zany_Zebras
         {
             tileId = id;
             sheet = Sheet;
-            position = new Vector2(x, y);
+            position = new Vector2(x*Width, y*Height);
+            bounding = new Rectangle((int)position.X, (int)position.Y, Width, Height);
             width = Width;
             height = Height;
+            ability = null;
         }
 
         public void Render()

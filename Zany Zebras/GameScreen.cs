@@ -38,7 +38,7 @@ namespace Zany_Zebras
         public virtual void Render()
         {
         }
-        public virtual void Update()
+        public virtual void Update(GameTime gameTime)
         {
         }
     }

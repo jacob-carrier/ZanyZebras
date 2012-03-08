@@ -16,8 +16,7 @@ namespace Zany_Zebras
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        //ScreenManager screenManager;
-        Zebra zebra1;
+        private ScreenManager screenManager;
 
         GraphicsDeviceManager graphics;
         
@@ -51,6 +50,7 @@ namespace Zany_Zebras
         {
             graphics = new GraphicsDeviceManager(this);
             this.Content.RootDirectory = "Zebra Resources";
+            this.IsMouseVisible = true;
             _instance = this;
         }
 
@@ -63,11 +63,8 @@ namespace Zany_Zebras
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            //screenManager = new ScreenManager();
-            //screenManager.pushScreen(new PauseScreen());
-            zebra1 = new Zebra(Content.Load<Texture2D>("Sprites/zebra_leftright"), 100,100);
-            zebra1.addAnimation("right", new Animation(3, 64, 32, 0));
-            zebra1.CurrentAnimation = "right";
+            screenManager = new ScreenManager();
+            screenManager.pushScreen(new GamePlayScreen());
             base.Initialize();
         }
 
@@ -104,8 +101,7 @@ namespace Zany_Zebras
                 this.Exit();
 
             // TODO: Add your update logic here
-            //screenManager.Update();
-            zebra1.Update(gameTime);
+            screenManager.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -119,9 +115,7 @@ namespace Zany_Zebras
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
 
-            //screenManager.Render();
-
-            zebra1.Render();
+            screenManager.Render();
 
             spriteBatch.End();
 

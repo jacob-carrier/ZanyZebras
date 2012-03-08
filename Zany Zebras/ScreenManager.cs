@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
 
 namespace Zany_Zebras
 {
@@ -35,13 +36,13 @@ namespace Zany_Zebras
             }
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             foreach (GameScreen screen in _screens)
             {
                 if (!screen.Pause)
                 {
-                    screen.Update();
+                    screen.Update(gameTime);
                 }
             }
         }

@@ -8,23 +8,34 @@ namespace Zany_Zebras
 {
     class Input
     {
-        private MouseState _state;
+        public MouseState oldState, newState;
         public Vector2 MousePosition
         {
             get
             {
-                return new Vector2(_state.X, _state.Y);
+                return new Vector2(newState.X, newState.Y);
             }
         }
 
-        public virtual void mouseDown()
+        public bool mouseDown()
         {
-
+            if (newState.LeftButton == ButtonState.Pressed && oldState.LeftButton == ButtonState.Pressed)
+            {
+                return true;
+            }
+            return false;
         }
 
-        public virtual void mouseUp()
+        public bool mouseUp()
         {
-
+            if (newState.LeftButton == ButtonState.Released && oldState.LeftButton == ButtonState.Released)
+            {
+                return true;
+            }
+            return false;
         }
+
+
+        public virtual void Update() { }
     }
 }

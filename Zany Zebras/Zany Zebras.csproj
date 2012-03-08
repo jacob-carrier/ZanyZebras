@@ -109,6 +109,8 @@
   <ItemGroup>
     <Compile Include="Animation.cs" />
     <Compile Include="FontManager.cs" />
+    <Compile Include="GameInput.cs" />
+    <Compile Include="GamePlayScreen.cs" />
     <Compile Include="GameScreen.cs" />
     <Compile Include="Grid.cs" />
     <Compile Include="IAbility.cs" />
@@ -121,6 +123,7 @@
     <Compile Include="ScreenManager.cs" />
     <Compile Include="StoreInput.cs" />
     <Compile Include="Tile.cs" />
+    <Compile Include="Utils.cs" />
     <Compile Include="Zebra.cs" />
   </ItemGroup>
   <ItemGroup>
