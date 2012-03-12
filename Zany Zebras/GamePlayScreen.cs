@@ -62,6 +62,7 @@ namespace Zany_Zebras
             zebra1 = new Zebra(Game1.Instance.gameContent.Load<Texture2D>("Sprites/zebra_leftright"), 100, 100);
             _levelInstance = new Level();
             zebra1.addAnimation("right", new Animation(3, 64, 32, 0));
+            zebra1.addAnimation("left", new Animation(3, 64, 32, 1));
             zebra1.CurrentAnimation = "right";
 
             input = new GameInput(this, _levelInstance);

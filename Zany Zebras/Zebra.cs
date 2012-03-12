@@ -15,12 +15,14 @@ namespace Zany_Zebras
         private string currentAnim;
         private Vector2 position;
         private Point center;
+        private int speed;
 
         public Zebra(Texture2D image, int posX, int posY)
         {
             sheet = image;
             position = new Vector2(posX, posY);
             animations = new Dictionary<string, Animation>();
+            speed = 2;
         }
 
         public float X
@@ -68,6 +70,17 @@ namespace Zany_Zebras
         public void Update(GameTime gameTime)
         {
             animations[currentAnim].Update(gameTime);
+            position.X += speed;
+            if (position.X > 450)
+            {
+                speed = -speed;
+                currentAnim = "left";
+            }
+            if (position.X < 10)
+            {
+                speed = -speed;
+                currentAnim = "right";
+            }
         }
 
         public void Render()
