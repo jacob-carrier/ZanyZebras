@@ -21,3 +21,15 @@ C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resour
 C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\zebra_leftright.xnb
 C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\map_tilesheet.xnb
 C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\outline.xnb
+C:\Users\Jason\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Fonts\gameText.xnb
+C:\Users\Jason\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\zebra_leftright.xnb
+C:\Users\Jason\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\map_tilesheet.xnb
+C:\Users\Jason\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\outline.xnb
+C:\Users\Jason\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zany Zebras.exe
+C:\Users\Jason\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zany Zebras.pdb
+C:\Users\Jason\Dropbox\Zany Zebras - 2501\Zany Zebras\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jason\Dropbox\Zany Zebras - 2501\Zany Zebras\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Jason\Dropbox\Zany Zebras - 2501\Zany Zebras\obj\x86\Debug\Zany Zebras.exe
+C:\Users\Jason\Dropbox\Zany Zebras - 2501\Zany Zebras\obj\x86\Debug\Zany Zebras.pdb
+C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\Clear_Shovel.xnb
+C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\abilitybar.xnb

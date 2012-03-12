@@ -53,19 +53,11 @@ namespace Zany_Zebras
             }
         }
 
-        public int tileX
+        public Vector2 Position
         {
-            set
+            get
             {
-                tileId.X = value;
-            }
-        }
-
-        public int tileY
-        {
-            set
-            {
-                tileId.Y = value;
+                return position;
             }
         }
 
@@ -84,6 +76,10 @@ namespace Zany_Zebras
         {
             src = new Rectangle((int)tileId.X * width, (int)tileId.Y * height, width, height);
             Game1.Instance.SpriteBatch.Draw(sheet, position, src, Color.White);
+            if (ability != null)
+            {
+                ability.Render();
+            }
         }
     }
 }

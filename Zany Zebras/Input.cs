@@ -35,6 +35,26 @@ namespace Zany_Zebras
             return false;
         }
 
+        public bool mouseReleased()
+        {
+            if (newState.LeftButton == ButtonState.Released && oldState.LeftButton == ButtonState.Pressed)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool mousePressed()
+        {
+            if (newState.LeftButton == ButtonState.Pressed && oldState.LeftButton == ButtonState.Released)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
 
         public virtual void Update() { }
     }

@@ -20,7 +20,7 @@ namespace Zany_Zebras
 
         public Level()
         {
-            grid = new Grid(15, 15);
+            grid = new Grid(25, 15);
         }
 
         public void Reset()

@@ -29,8 +29,8 @@ namespace Zany_Zebras
             }
         }
 
-        private static Level _levelInstance;
-        public static Level LevelInstance
+        private Level _levelInstance;
+        public Level LevelInstance
         {
             get
             {
@@ -45,6 +45,15 @@ namespace Zany_Zebras
             }
         }
 
+        private AbilityBar abilityBar;
+        public AbilityBar AbilityBar
+        {
+            get
+            {
+                return abilityBar;
+            }
+        }
+
         public GamePlayScreen()
         {
             Pause = false;
@@ -56,22 +65,27 @@ namespace Zany_Zebras
             zebra1.CurrentAnimation = "right";
 
             input = new GameInput(this, _levelInstance);
+
+
+            abilityBar = new AbilityBar(200, 400);
+            abilityBar.setAbility(1, new Shovel(200, 400));
         }
 
         public override void Update(GameTime gameTime)
         {
             input.Update();
             zebra1.Update(gameTime);
-            
+            abilityBar.Update(gameTime);
         }
 
         public override void Render()
         {
             _levelInstance.Render();
             zebra1.Render();
+            abilityBar.Render();
             if (showMouseText)
             {
-                FontManager.Instance.Render("Mouse Position X: " + input.MousePosition.X + " Mouse Position Y: " + input.MousePosition.Y, new Vector2(0, 16));
+                FontManager.Instance.Render("Mouse Position X: " + input.MousePosition.Y + " Mouse Position Y: " + input.MousePosition.Y, new Vector2(0, 16));
             }
 
             if (renderTileOutline)
