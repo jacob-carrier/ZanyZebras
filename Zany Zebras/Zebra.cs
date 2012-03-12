@@ -9,20 +9,22 @@ namespace Zany_Zebras
 {
     class Zebra
     {
-
+        
         private Texture2D sheet;
         private Dictionary<String, Animation> animations;
         private string currentAnim;
-        private Vector2 position;
+        private Vector2 position, movement;
         private Point center;
-        private int speed;
+        private int health;
+        private Rectangle bounds;
 
         public Zebra(Texture2D image, int posX, int posY)
         {
             sheet = image;
             position = new Vector2(posX, posY);
+            movement = new Vector2(1, 0);
             animations = new Dictionary<string, Animation>();
-            speed = 2;
+            health = 20;
         }
 
         public float X
@@ -51,11 +53,19 @@ namespace Zany_Zebras
             }
         }
 
+        public Rectangle BoundingBox
+        {
+            get
+            {
+                return bounds;
+            }
+        }
+
         public Point Center
         {
             get
             {
-                return animations[currentAnim].getFrame.Center;
+                return bounds.Center;
             }
         }
 
@@ -67,20 +77,24 @@ namespace Zany_Zebras
             }
         }
 
+        public int Health
+        {
+            get
+            {
+                return health;
+            }
+
+            set
+            {
+                health = value;
+            }
+        }
+
         public void Update(GameTime gameTime)
         {
             animations[currentAnim].Update(gameTime);
-            position.X += speed;
-            if (position.X > 450)
-            {
-                speed = -speed;
-                currentAnim = "left";
-            }
-            if (position.X < 10)
-            {
-                speed = -speed;
-                currentAnim = "right";
-            }
+            position += movement;
+            bounds = new Rectangle((int)position.X, (int)position.Y, animations[currentAnim].getFrame.Width, animations[currentAnim].getFrame.Height);
         }
 
         public void Render()

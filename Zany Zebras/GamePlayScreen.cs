@@ -9,6 +9,7 @@ namespace Zany_Zebras
 {
     class GamePlayScreen : GameScreen
     {
+        private EntityManager entityManager;
         private GameInput input;
         private Zebra zebra1;
         private bool renderTileOutline = false;
@@ -69,20 +70,23 @@ namespace Zany_Zebras
 
 
             abilityBar = new AbilityBar(200, 400);
-            abilityBar.setAbility(1, new Shovel(200, 400));
+            abilityBar.setAbility(1, new Pit(new Vector2(200, 400)));
+
+            entityManager = new EntityManager(_levelInstance);
+            entityManager.addEntity(zebra1);
         }
 
         public override void Update(GameTime gameTime)
         {
             input.Update();
-            zebra1.Update(gameTime);
+            entityManager.Update(gameTime);
             abilityBar.Update(gameTime);
         }
 
         public override void Render()
         {
             _levelInstance.Render();
-            zebra1.Render();
+            entityManager.Render();
             abilityBar.Render();
             if (showMouseText)
             {

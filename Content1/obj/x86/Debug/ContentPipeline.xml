@@ -7,7 +7,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Fonts\gameText.xnb</Output>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Fonts\gameText.xnb</Output>
       <Time>2012-02-29T22:48:35.6578-05:00</Time>
     </Item>
     <Item>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\zebra_leftright.xnb</Output>
-      <Time>2012-03-06T20:00:46.4364-05:00</Time>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\zebra_leftright.xnb</Output>
+      <Time>2012-03-12T00:37:45.7798-04:00</Time>
     </Item>
     <Item>
       <Source>Sprites\map_tilesheet.png</Source>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\map_tilesheet.xnb</Output>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\map_tilesheet.xnb</Output>
       <Time>2012-03-08T11:26:39.1244-05:00</Time>
     </Item>
     <Item>
@@ -34,8 +34,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\outline.xnb</Output>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\outline.xnb</Output>
       <Time>2012-03-08T13:20:06.6564-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Clear_Shovel.png</Source>
+      <Name>Sprites\Clear_Shovel</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\Clear_Shovel.xnb</Output>
+      <Time>2012-02-29T22:48:31-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -43,10 +52,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Content1\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Content1\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Jacob\Dropbox\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\</OutputDirectory>
+      <RootDirectory>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Content1\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Content1\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

@@ -41,8 +41,9 @@ namespace Zany_Zebras
                         IAbility a = (IAbility)selectedAbility.Clone();
                         int X = newState.X / 40;
                         int Y = newState.Y / 40;
-                        a.position = new Vector2(gpScreen.LevelInstance.Grid.getCell(X, Y).Position.X, gpScreen.LevelInstance.Grid.getCell(X, Y).Position.Y);
-                        gpScreen.LevelInstance.Grid.setCell(a, newState.X / 40, newState.Y / 40);
+                        a.position = new Vector2(levelRef.Grid.getCell(X, Y).Position.X, levelRef.Grid.getCell(X, Y).Position.Y);
+                        levelRef.Grid.setCell(a, newState.X / 40, newState.Y / 40);
+                        levelRef.Grid.getCell(newState.X / 40, newState.Y / 40).Occupied = true;
                     }
                 }
             }

@@ -10,7 +10,6 @@ namespace Zany_Zebras
     class Grid
     {
         private int mapWidth, mapHeight;
-        //private Dictionary<int, IAbility> abilitiesOnGrid;
         private Tile[,] grid;
         private Texture2D tileSheet;
 
@@ -28,14 +27,11 @@ namespace Zany_Zebras
                     grid[y, x] = new Tile(new Vector2(0,0), ref tileSheet, x, y, 40, 40);
                 }
             }
-
-            //abilitiesOnGrid = new Dictionary<int, IAbility>();
         }
 
         
         public IAbility getAbility(int x, int y)
         {
-            //return abilitiesOnGrid[this.getCell(x, y).AbilityId];
             return this.getCell(x, y).Ability;
         }
         
@@ -50,7 +46,6 @@ namespace Zany_Zebras
         {
             grid[y, x].Ability = ability;
             grid[y, x].Occupied = true;
-            //abilitiesOnGrid.Add(abilityId, ability);
         }
 
         public void Render()
