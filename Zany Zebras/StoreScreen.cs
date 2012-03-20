@@ -58,6 +58,7 @@ namespace Zany_Zebras
 
         private void changeText(GuiButton b, ButtonArgs args)
         {
+            b.FrameID = new Vector2(1, 0);
             currentText = abilityDesc[args.AbilityID];
         }
     }

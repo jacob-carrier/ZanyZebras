@@ -43,12 +43,12 @@ namespace Zany_Zebras
 
         private Texture2D image;
         private Vector2 position;
-        private bool hover;
-        public bool MouseOver
+        private Vector2 frameID;
+        public Vector2 FrameID
         {
-            get
+            set
             {
-                return hover;
+                frameID = value;
             }
         }
         private int abilityID;
@@ -88,6 +88,10 @@ namespace Zany_Zebras
                         Hover(this, args);
                     }
                 }
+                else
+                {
+                    frameID = new Vector2(0, 0);
+                }
             }
 
             oldState = newState;
@@ -95,7 +99,8 @@ namespace Zany_Zebras
 
         public void Render()
         {
-            Game1.Instance.SpriteBatch.Draw(image, bounds, Color.White);
+            Rectangle dest = new Rectangle((int)frameID.X*bounds.Width, 0, bounds.Width, bounds.Height);
+            Game1.Instance.SpriteBatch.Draw(image, bounds, dest, Color.White);
         }
     }
 }
