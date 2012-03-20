@@ -46,6 +46,24 @@
       <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\Clear_Shovel.xnb</Output>
       <Time>2012-02-29T22:48:31-05:00</Time>
     </Item>
+    <Item>
+      <Source>Sprites\shovel_button.png</Source>
+      <Name>Sprites\shovel_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\shovel_button.xnb</Output>
+      <Time>2012-03-20T12:55:33.60555-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\pit_button.png</Source>
+      <Name>Sprites\pit_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\pit_button.xnb</Output>
+      <Time>2012-03-20T12:58:42.24355-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
