@@ -16,6 +16,8 @@ namespace Zany_Zebras
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+
+        //Need to keep list of abilities to be able to pull from
         private ScreenManager screenManager;
 
         GraphicsDeviceManager graphics;

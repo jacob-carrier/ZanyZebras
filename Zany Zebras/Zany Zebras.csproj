@@ -118,6 +118,7 @@
     <Compile Include="GamePlayScreen.cs" />
     <Compile Include="GameScreen.cs" />
     <Compile Include="Grid.cs" />
+    <Compile Include="GuiButton.cs" />
     <Compile Include="IAbility.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="Level.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="ScreenManager.cs" />
     <Compile Include="Shovel.cs" />
     <Compile Include="StoreInput.cs" />
+    <Compile Include="StoreScreen.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="Zebra.cs" />

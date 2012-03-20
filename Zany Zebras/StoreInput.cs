@@ -9,16 +9,19 @@ namespace Zany_Zebras
 {
     class StoreInput : Input
     {
-        public StoreInput()
+        private List<GuiButton> buttons;
+        public StoreInput(List<GuiButton> btnList)
         {
-
+            buttons = btnList;
         }
 
         public override void Update()
         {
             newState = Mouse.GetState();
-
-
+            foreach (GuiButton b in buttons)
+            {
+                b.Update();
+            }
             oldState = newState;
         }
     }
