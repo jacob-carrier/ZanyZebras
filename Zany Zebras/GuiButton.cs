@@ -28,7 +28,9 @@ namespace Zany_Zebras
     class GuiButton : Input
     {
         public event ClickHandler Click;
-        public delegate void ClickHandler(GuiButton b, ButtonArgs args); //recieves functions that handles the click with the ID that represents the Ability
+        public event HoverHandler Hover;
+        public delegate void ClickHandler(GuiButton b, ButtonArgs args); //recieves function that handles the click with the ID that represents the Ability
+        public delegate void HoverHandler(GuiButton b, ButtonArgs args); //recieves function that handles which button the mouse is over;
 
         private Rectangle bounds;
         public Rectangle BoundingBox
@@ -41,7 +43,14 @@ namespace Zany_Zebras
 
         private Texture2D image;
         private Vector2 position;
-        private bool hover, mouseDown;
+        private bool hover;
+        public bool MouseOver
+        {
+            get
+            {
+                return hover;
+            }
+        }
         private int abilityID;
 
         public GuiButton(Vector2 pos, string imageName, int width, int height, int abilityID)
@@ -52,7 +61,7 @@ namespace Zany_Zebras
             this.abilityID = abilityID;
         }
 
-        public void Update()
+        public override void Update()
         {
             newState = Mouse.GetState();
             if (mouseReleased())
@@ -70,11 +79,15 @@ namespace Zany_Zebras
 
             if (mouseUp())
             {
-                hover = true;
-            }
-            else
-            {
-                hover = false;
+                if (newState.X > bounds.X && newState.X < (bounds.X + bounds.Width)
+                    && newState.Y > bounds.Y && newState.Y < (bounds.Y + bounds.Height))
+                {
+                    if (Hover != null)
+                    {
+                        ButtonArgs args = new ButtonArgs(abilityID);
+                        Hover(this, args);
+                    }
+                }
             }
 
             oldState = newState;

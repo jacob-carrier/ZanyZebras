@@ -66,7 +66,7 @@ namespace Zany_Zebras
         {
             // TODO: Add your initialization logic here
             screenManager = new ScreenManager();
-            screenManager.pushScreen(new GamePlayScreen());
+            screenManager.pushScreen(new StoreScreen());
             base.Initialize();
         }
 
