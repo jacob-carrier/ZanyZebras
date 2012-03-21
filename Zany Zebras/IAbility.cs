@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Zany_Zebras
 {
-    class IAbility : ICloneable
+    public class IAbility : ICloneable
     {
         public Texture2D image;
         public Vector2 position;

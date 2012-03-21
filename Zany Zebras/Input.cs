@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 namespace Zany_Zebras
 {
-    class Input
+    public class Input
     {
         public MouseState oldState, newState;
         public Vector2 MousePosition

@@ -11,7 +11,7 @@ namespace Zany_Zebras
     {
         public Pit(Vector2 v)
         {
-            image = Game1.Instance.gameContent.Load<Texture2D>("Sprites/Clear_shovel");
+            image = Game1.Instance.gameContent.Load<Texture2D>("Sprites/pit_button");
             position = v;
             damage = 20;
         }
@@ -23,8 +23,8 @@ namespace Zany_Zebras
 
         public override void Render()
         {
-            dest = new Rectangle((int)position.X, (int)position.Y, 32, 32);
-            Game1.Instance.SpriteBatch.Draw(image, dest, new Rectangle(32, 0, 32, 32), Color.White);
+            dest = new Rectangle((int)position.X, (int)position.Y, 48, 48);
+            Game1.Instance.SpriteBatch.Draw(image, dest, new Rectangle(0, 0, 48, 48), Color.White);
         }
 
         public override void gameEvent(Zebra z)

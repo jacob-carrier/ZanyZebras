@@ -16,7 +16,7 @@ namespace Zany_Zebras
         {
             position.X = x;
             position.Y = y;
-            image = Game1.Instance.gameContent.Load<Texture2D>("Sprites/Clear_shovel");
+            image = Game1.Instance.gameContent.Load<Texture2D>("Sprites/shovel_button");
         }
 
         public override void Update(GameTime gameTime)
@@ -26,8 +26,8 @@ namespace Zany_Zebras
 
         public override void Render()
         {
-            dest = new Rectangle((int)position.X, (int)position.Y, 32, 32);
-            Game1.Instance.SpriteBatch.Draw(image, dest, new Rectangle(32,0,32,32), Color.White);
+            dest = new Rectangle((int)position.X, (int)position.Y, 48, 48);
+            Game1.Instance.SpriteBatch.Draw(image, dest, new Rectangle(0,0,48,48), Color.White);
         }
     }
 }

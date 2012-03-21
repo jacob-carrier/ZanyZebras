@@ -26,12 +26,12 @@ namespace Zany_Zebras
             if (mouseReleased())
             {
                 gpScreen.ShowMouseText = true;
-                if (newState.X > gpScreen.AbilityBar.Button1.X && newState.X < (gpScreen.AbilityBar.Button1.X + gpScreen.AbilityBar.Button1.Width)
-                    && newState.Y > gpScreen.AbilityBar.Button1.Y && newState.Y < (gpScreen.AbilityBar.Button1.Y + gpScreen.AbilityBar.Button1.Height))
+                if (newState.X > Game1.Instance.GameAbilityBar.Button1.BoundingBox.X && newState.X < (Game1.Instance.GameAbilityBar.Button1.BoundingBox.X + Game1.Instance.GameAbilityBar.Button1.BoundingBox.Width)
+                    && newState.Y > Game1.Instance.GameAbilityBar.Button1.BoundingBox.Y && newState.Y < (Game1.Instance.GameAbilityBar.Button1.BoundingBox.Y + Game1.Instance.GameAbilityBar.Button1.BoundingBox.Height))
                 {
                     if (selectedAbility == null)
                     {
-                        selectedAbility = gpScreen.AbilityBar.getAbility(1);
+                        selectedAbility = Game1.Instance.GameAbilityBar.getAbility(1);
                     }
                 }
                 else

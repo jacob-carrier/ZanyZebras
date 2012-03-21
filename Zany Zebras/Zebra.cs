@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Zany_Zebras
 {
-    class Zebra
+    public class Zebra
     {
         
         private Texture2D sheet;

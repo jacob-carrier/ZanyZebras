@@ -46,3 +46,4 @@ C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\obj\x86\De
 C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\Clear_Shovel.xnb
 C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\shovel_button.xnb
 C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\pit_button.xnb
+C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\button_template.xnb

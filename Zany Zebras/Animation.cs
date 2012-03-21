@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Zany_Zebras
 {
-    class Animation
+    public class Animation
     {
         private int _currentFrame;
         private int numFrames;

@@ -46,15 +46,6 @@ namespace Zany_Zebras
             }
         }
 
-        private AbilityBar abilityBar;
-        public AbilityBar AbilityBar
-        {
-            get
-            {
-                return abilityBar;
-            }
-        }
-
         public GamePlayScreen()
         {
             Pause = false;
@@ -68,10 +59,6 @@ namespace Zany_Zebras
 
             input = new GameInput(this, _levelInstance);
 
-
-            abilityBar = new AbilityBar(200, 400);
-            abilityBar.setAbility(1, new Pit(new Vector2(200, 400)));
-
             entityManager = new EntityManager(_levelInstance);
             entityManager.addEntity(zebra1);
         }
@@ -79,15 +66,15 @@ namespace Zany_Zebras
         public override void Update(GameTime gameTime)
         {
             input.Update();
+            Game1.Instance.GameAbilityBar.Update(gameTime);
             entityManager.Update(gameTime);
-            abilityBar.Update(gameTime);
         }
 
         public override void Render()
         {
             _levelInstance.Render();
             entityManager.Render();
-            abilityBar.Render();
+            Game1.Instance.GameAbilityBar.Render();
             if (showMouseText)
             {
                 FontManager.Instance.Render("Mouse Position X: " + input.MousePosition.Y + " Mouse Position Y: " + input.MousePosition.Y, new Vector2(0, 16));

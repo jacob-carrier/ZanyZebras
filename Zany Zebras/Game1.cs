@@ -47,6 +47,15 @@ namespace Zany_Zebras
                 return _instance;
             }
         }
+
+        private AbilityBar abilityBar;
+        public AbilityBar GameAbilityBar
+        {
+            get
+            {
+                return abilityBar;
+            }
+        }
         
         public Game1()
         {
@@ -67,6 +76,9 @@ namespace Zany_Zebras
             // TODO: Add your initialization logic here
             screenManager = new ScreenManager();
             screenManager.pushScreen(new StoreScreen());
+
+            abilityBar = new AbilityBar(200, 400);
+            abilityBar.setAbility(1, new Pit(new Vector2(200, 400)));
             base.Initialize();
         }
 
@@ -118,7 +130,6 @@ namespace Zany_Zebras
             spriteBatch.Begin();
 
             screenManager.Render();
-
             spriteBatch.End();
 
             base.Draw(gameTime);

@@ -64,6 +64,15 @@
       <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\pit_button.xnb</Output>
       <Time>2012-03-20T13:52:22.24555-04:00</Time>
     </Item>
+    <Item>
+      <Source>Sprites\button_template.png</Source>
+      <Name>Sprites\button_template</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\button_template.xnb</Output>
+      <Time>2012-03-20T19:05:19.51055-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
