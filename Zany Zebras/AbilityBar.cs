@@ -24,6 +24,14 @@ namespace Zany_Zebras
             }
         }
 
+        public GuiButton Button2
+        {
+            get
+            {
+                return button2;
+            }
+        }
+
         public List<IAbility> AbilityList
         {
             get
@@ -35,15 +43,15 @@ namespace Zany_Zebras
         public AbilityBar(int x, int y)
         {
             abilityList = new List<IAbility>();
-            abilityList.Add(new Shovel(0, 0));
+            abilityList.Add(new Pit(new Vector2(0, 0)));
             abilityList.Add(new Pit(new Vector2(0, 0)));
 
             abilities = new Dictionary<int,IAbility>();
             position = new Vector2(x, y);
             bar = Game1.Instance.gameContent.Load<Texture2D>("Sprites/abilitybar");
-            button1 = new GuiButton(new Vector2(300,400), "Sprites/button_template", 48, 48, 0);
+            button1 = new GuiButton(new Vector2(300,550), "Sprites/button_template", 48, 48, 0);
             button1.Enabled = true;
-            button2 = new GuiButton(new Vector2(348, 400), "Sprites/button_template", 48, 48, 1);
+            button2 = new GuiButton(new Vector2(348, 550), "Sprites/button_template", 48, 48, 1);
             button2.Enabled = true;
             buttonList = new List<GuiButton>();
             buttonList.Add(button1);
@@ -97,6 +105,10 @@ namespace Zany_Zebras
         {
             //for (int x = 1; x <= 1; x++)
                 //abilities[x].Update(gameTime);
+            foreach (GuiButton b in buttonList)
+            {
+                b.Update();
+            }
         } 
     }
 }

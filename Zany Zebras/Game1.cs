@@ -19,6 +19,13 @@ namespace Zany_Zebras
 
         //Need to keep list of abilities to be able to pull from
         private ScreenManager screenManager;
+        public ScreenManager ScreenManager
+        {
+            get
+            {
+                return screenManager;
+            }
+        }
 
         GraphicsDeviceManager graphics;
         
@@ -79,7 +86,7 @@ namespace Zany_Zebras
             screenManager = new ScreenManager();
             screenManager.pushScreen(new StoreScreen());
 
-            abilityBar = new AbilityBar(300, 400);
+            abilityBar = new AbilityBar(300, 550);
             //abilityBar.setAbility(1, new Pit(new Vector2(200, 400)));
             base.Initialize();
         }
@@ -118,6 +125,7 @@ namespace Zany_Zebras
 
             // TODO: Add your update logic here
             screenManager.Update(gameTime);
+            abilityBar.Update(gameTime);
 
             base.Update(gameTime);
         }

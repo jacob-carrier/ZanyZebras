@@ -31,7 +31,7 @@ namespace Zany_Zebras
                 {
                     if (selectedAbility == null)
                     {
-                        selectedAbility = Game1.Instance.GameAbilityBar.getAbility(1);
+                        selectedAbility = Game1.Instance.GameAbilityBar.getAbility(Game1.Instance.GameAbilityBar.Button1.AbilityID);
                     }
                 }
                 else

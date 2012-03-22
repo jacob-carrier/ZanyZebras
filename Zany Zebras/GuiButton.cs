@@ -39,12 +39,21 @@ namespace Zany_Zebras
         }
     }
 
+    public class GuiArgs : EventArgs{
+        public GuiArgs()
+        {
+
+        }
+    }
+
     public class GuiButton : Input
     {
         public event ClickHandler Click;
         public event HoverHandler Hover;
         public event DraggingHandler Drag;
         public event DropHandler Drop;
+        public event GuiHandler ChangeScreens;
+        public delegate void GuiHandler(GuiButton b);
         public delegate void ClickHandler(GuiButton b, ButtonArgs args); //recieves function that handles the click with the ID that represents the Ability
         public delegate void HoverHandler(GuiButton b, ButtonArgs args); //recieves function that handles which button the mouse is over;
         public delegate void DraggingHandler(GuiButton b, ButtonArgs args);
@@ -104,6 +113,10 @@ namespace Zany_Zebras
             {
                 abilityID = value;
             }
+            get
+            {
+                return abilityID;
+            }
         }
 
         public GuiButton(Vector2 pos, string imageName, int width, int height, int abilityID)
@@ -139,6 +152,11 @@ namespace Zany_Zebras
                         {
                             ButtonArgs args = new ButtonArgs(abilityID);
                             Click(this, args);
+                        }
+
+                        if (ChangeScreens != null)
+                        {
+                            ChangeScreens(this);
                         }
                     }
                 }

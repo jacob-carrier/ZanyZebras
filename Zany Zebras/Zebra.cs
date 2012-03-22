@@ -14,7 +14,6 @@ namespace Zany_Zebras
         private Dictionary<String, Animation> animations;
         private string currentAnim;
         private Vector2 position, movement;
-        private Point center;
         private int health;
         private Rectangle bounds;
 

@@ -14,7 +14,7 @@ namespace Zany_Zebras
         private List<GuiButton> buttons;
         private List<string> abilityDesc;
         private List<IAbility> abilities;
-        private GuiButton spikeButton, pitButton, lionButton;
+        private GuiButton spikeButton, pitButton, lionButton, gameButton;
         private string currentText ="";
         bool skillDragged = false;
         Texture2D draggedImage;
@@ -29,6 +29,10 @@ namespace Zany_Zebras
             spikeButton.Enabled = false;
             lionButton = new GuiButton(new Vector2(248, 172), "Sprites/lion_button", 48, 48, 2);
             spikeButton.Enabled = false;
+            gameButton = new GuiButton(new Vector2(600, 550), "Sprites/button", 193, 25, 0);
+            gameButton.Enabled = true;
+            gameButton.ChangeScreens += new GuiButton.GuiHandler(changeScreens);
+            gameButton.Hover += new GuiButton.HoverHandler(gameButton_Hover);
             buttons.Add(pitButton);
             buttons.Add(spikeButton);
             buttons.Add(lionButton);
@@ -56,6 +60,7 @@ namespace Zany_Zebras
         public override void Update(GameTime gameTime)
         {
             input.Update();
+            gameButton.Update();
             Game1.Instance.GameAbilityBar.Update(gameTime);
         }
 
@@ -65,12 +70,15 @@ namespace Zany_Zebras
             {
                 b.Render();
             }
+            gameButton.Render();
             Game1.Instance.GameAbilityBar.Render();
             if (skillDragged)
             {
                 Game1.Instance.SpriteBatch.Draw(draggedImage, new Rectangle(Mouse.GetState().X-24, Mouse.GetState().Y-24, 48, 48),new Rectangle(0,0,48,48), Color.White);
             }
             FontManager.Instance.Render(currentText, new Vector2(500,100));
+            string nextLevel = "Next Level";
+            FontManager.Instance.Render(nextLevel, new Vector2(gameButton.BoundingBox.X + gameButton.BoundingBox.Width / 4, gameButton.BoundingBox.Y + gameButton.BoundingBox.Height / 2 - 16) );
         }
 
         private void addAbilityToBar(GuiButton b, ButtonArgs args)
@@ -83,6 +91,11 @@ namespace Zany_Zebras
         {
             b.FrameID = new Vector2(1, 0);
             currentText = abilityDesc[args.AbilityID];
+        }
+
+        private void gameButton_Hover(GuiButton b, ButtonArgs args)
+        {
+            b.FrameID = new Vector2(1, 0);
         }
 
         private void dragging(GuiButton b, ButtonArgs args){
@@ -109,6 +122,14 @@ namespace Zany_Zebras
             {
                 skillDragged = false;
             }
+        }
+
+        private void changeScreens(GuiButton b)
+        {
+            //Game1.Instance.ScreenManager.currentScreen().Block = true;
+            //Game1.Instance.ScreenManager.currentScreen().Pause = true;
+            Game1.Instance.ScreenManager.popScreen();
+            Game1.Instance.ScreenManager.pushScreen(new GamePlayScreen());
         }
     }
 }

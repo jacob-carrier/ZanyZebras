@@ -11,7 +11,7 @@ namespace Zany_Zebras
     {
         public Pit(Vector2 v)
         {
-            image = Game1.Instance.gameContent.Load<Texture2D>("Sprites/pit_button");
+            image = Game1.Instance.gameContent.Load<Texture2D>("Sprites/pit");
             position = v;
             damage = 20;
         }

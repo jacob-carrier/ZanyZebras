@@ -48,8 +48,8 @@ namespace Zany_Zebras
 
         public GamePlayScreen()
         {
-            Pause = false;
-            Block = false;
+            //Pause = false;
+            //Block = false;
 
             zebra1 = new Zebra(Game1.Instance.gameContent.Load<Texture2D>("Sprites/zebra_leftright"), 100, 100);
             _levelInstance = new Level();
