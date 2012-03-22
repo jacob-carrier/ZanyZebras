@@ -51,6 +51,19 @@ namespace Zany_Zebras
         public delegate void DropHandler(GuiButton b, ButtonArgs args);
 
         bool dragging = false;
+        private bool enabled;
+        public bool Enabled
+        {
+            get
+            {
+                return enabled;
+            }
+
+            set
+            {
+                enabled = value;
+            }
+        }
 
         private Rectangle bounds;
         public Rectangle BoundingBox
@@ -169,8 +182,16 @@ namespace Zany_Zebras
 
         public void Render()
         {
-            Rectangle dest = new Rectangle((int)frameID.X*bounds.Width, 0, bounds.Width, bounds.Height);
-            Game1.Instance.SpriteBatch.Draw(image, bounds, dest, Color.White);
+            if (enabled)
+            {
+                Rectangle dest = new Rectangle((int)frameID.X * bounds.Width, 0, bounds.Width, bounds.Height);
+                Game1.Instance.SpriteBatch.Draw(image, bounds, dest, Color.White);
+            }
+            else
+            {
+                Rectangle dest = new Rectangle(2 * bounds.Width, 0, bounds.Width, bounds.Height);
+                Game1.Instance.SpriteBatch.Draw(image, bounds, dest, Color.White);
+            }
         }
     }
 }

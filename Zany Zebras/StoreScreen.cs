@@ -14,7 +14,7 @@ namespace Zany_Zebras
         private List<GuiButton> buttons;
         private List<string> abilityDesc;
         private List<IAbility> abilities;
-        private GuiButton shovelButton, pitButton;
+        private GuiButton spikeButton, pitButton, lionButton;
         private string currentText ="";
         bool skillDragged = false;
         Texture2D draggedImage;
@@ -23,22 +23,31 @@ namespace Zany_Zebras
         {
             buttons = new List<GuiButton>();
             abilities = new List<IAbility>();
-            shovelButton = new GuiButton(new Vector2(50, 100), "Sprites/shovel_button", 48, 48, 0);
-            pitButton = new GuiButton(new Vector2(98, 100), "Sprites/pit_button", 48, 48, 1);
-            buttons.Add(shovelButton);
+            pitButton = new GuiButton(new Vector2(200, 100), "Sprites/pit_button", 48, 48, 0);
+            pitButton.Enabled = true;
+            spikeButton = new GuiButton(new Vector2(156, 172), "Sprites/spikes_button", 48, 48, 1);
+            spikeButton.Enabled = false;
+            lionButton = new GuiButton(new Vector2(248, 172), "Sprites/lion_button", 48, 48, 2);
+            spikeButton.Enabled = false;
             buttons.Add(pitButton);
+            buttons.Add(spikeButton);
+            buttons.Add(lionButton);
 
             abilityDesc = new List<string>();
 
-            abilityDesc.Add("This is the shovel ability");
             abilityDesc.Add("This is the pit ability");
+            abilityDesc.Add("This is the spike ability");
+            abilityDesc.Add("This is the lion ability");
 
             for (int i = 0; i < buttons.Count; i++)
             {
-                buttons[i].Click += new GuiButton.ClickHandler(addAbilityToBar);
-                buttons[i].Hover += new GuiButton.HoverHandler(changeText);
-                buttons[i].Drag += new GuiButton.DraggingHandler(dragging);
-                buttons[i].Drop += new GuiButton.DropHandler(dropping);
+                if (buttons[i].Enabled)
+                {
+                    buttons[i].Click += new GuiButton.ClickHandler(addAbilityToBar);
+                    buttons[i].Hover += new GuiButton.HoverHandler(changeText);
+                    buttons[i].Drag += new GuiButton.DraggingHandler(dragging);
+                    buttons[i].Drop += new GuiButton.DropHandler(dropping);
+                }
             }
 
             input = new StoreInput(buttons);
@@ -61,7 +70,7 @@ namespace Zany_Zebras
             {
                 Game1.Instance.SpriteBatch.Draw(draggedImage, new Rectangle(Mouse.GetState().X-24, Mouse.GetState().Y-24, 48, 48),new Rectangle(0,0,48,48), Color.White);
             }
-            FontManager.Instance.Render(currentText, new Vector2(300,100));
+            FontManager.Instance.Render(currentText, new Vector2(500,100));
         }
 
         private void addAbilityToBar(GuiButton b, ButtonArgs args)
@@ -84,12 +93,22 @@ namespace Zany_Zebras
         private void dropping(GuiButton b, ButtonArgs args)
         {
             Rectangle box = new Rectangle(Mouse.GetState().X - 24, Mouse.GetState().Y - 24, 48, 48);
-            if (box.Intersects(Game1.Instance.GameAbilityBar.Button1.BoundingBox))
+            GuiButton abilityBarButton = Game1.Instance.GameAbilityBar.abilityBoundingBox(new Point(Mouse.GetState().X, Mouse.GetState().Y));
+            if (abilityBarButton != null)
             {
-                Console.WriteLine("Collided");
-                Game1.Instance.GameAbilityBar.setAbility(args.AbilityID, Game1.Instance.GameAbilityBar.AbilityList[args.AbilityID]);
+                skillDragged = args.Dragged;
+                if (box.Intersects(abilityBarButton.BoundingBox))
+                {
+                    Console.WriteLine("Collided");
+                    Game1.Instance.GameAbilityBar.setAbility(args.AbilityID, Game1.Instance.GameAbilityBar.AbilityList[args.AbilityID]);
+                    abilityBarButton.AbilityID = args.AbilityID;
+                    abilityBarButton.ButtonImage = b.ButtonImage;
+                }
             }
-            skillDragged = args.Dragged;
+            else
+            {
+                skillDragged = false;
+            }
         }
     }
 }

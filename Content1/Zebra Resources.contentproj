@@ -75,22 +75,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sprites\shovel_button.png">
-      <Name>shovel_button</Name>
+    <Compile Include="Sprites\button_template.png">
+      <Name>button_template</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sprites\lion_button.png">
+      <Name>lion_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Compile Include="Sprites\pit_button.png">
       <Name>pit_button</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Sprites\button_template.png">
-      <Name>button_template</Name>
+    <Compile Include="Sprites\spikes_button.png">
+      <Name>spikes_button</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

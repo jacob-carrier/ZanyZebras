@@ -62,6 +62,8 @@ namespace Zany_Zebras
             graphics = new GraphicsDeviceManager(this);
             this.Content.RootDirectory = "Zebra Resources";
             this.IsMouseVisible = true;
+            graphics.PreferredBackBufferWidth = 800;
+            graphics.PreferredBackBufferHeight = 600;
             _instance = this;
         }
 
@@ -77,8 +79,8 @@ namespace Zany_Zebras
             screenManager = new ScreenManager();
             screenManager.pushScreen(new StoreScreen());
 
-            abilityBar = new AbilityBar(200, 400);
-            abilityBar.setAbility(1, new Pit(new Vector2(200, 400)));
+            abilityBar = new AbilityBar(300, 400);
+            //abilityBar.setAbility(1, new Pit(new Vector2(200, 400)));
             base.Initialize();
         }
 

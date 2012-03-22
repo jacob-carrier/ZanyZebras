@@ -16,7 +16,7 @@ namespace Zany_Zebras
         {
             position.X = x;
             position.Y = y;
-            image = Game1.Instance.gameContent.Load<Texture2D>("Sprites/shovel_button");
+            //image = Game1.Instance.gameContent.Load<Texture2D>("Sprites/shovel_button");
         }
 
         public override void Update(GameTime gameTime)

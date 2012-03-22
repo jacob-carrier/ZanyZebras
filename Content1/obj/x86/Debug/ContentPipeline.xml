@@ -47,22 +47,13 @@
       <Time>2012-02-29T22:48:31-05:00</Time>
     </Item>
     <Item>
-      <Source>Sprites\shovel_button.png</Source>
-      <Name>Sprites\shovel_button</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\shovel_button.xnb</Output>
-      <Time>2012-03-20T13:51:33.36355-04:00</Time>
-    </Item>
-    <Item>
       <Source>Sprites\pit_button.png</Source>
       <Name>Sprites\pit_button</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\pit_button.xnb</Output>
-      <Time>2012-03-20T13:52:22.24555-04:00</Time>
+      <Time>2012-03-22T12:26:00.2651-04:00</Time>
     </Item>
     <Item>
       <Source>Sprites\button_template.png</Source>
@@ -72,6 +63,24 @@
       <Options>None</Options>
       <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\button_template.xnb</Output>
       <Time>2012-03-20T19:05:19.51055-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spikes_button.png</Source>
+      <Name>Sprites\spikes_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\spikes_button.xnb</Output>
+      <Time>2012-03-22T12:26:00.2671-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\lion_button.png</Source>
+      <Name>Sprites\lion_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\lion_button.xnb</Output>
+      <Time>2012-03-22T12:26:00.2641-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -12,6 +12,7 @@ namespace Zany_Zebras
         List<IAbility> abilityList; // List of all possible abilities
         Dictionary<int, IAbility> abilities; // Abilities in the bar from 1-4
         GuiButton button1, button2;
+        List<GuiButton> buttonList;
         Vector2 position;
         Texture2D bar;
 
@@ -40,8 +41,13 @@ namespace Zany_Zebras
             abilities = new Dictionary<int,IAbility>();
             position = new Vector2(x, y);
             bar = Game1.Instance.gameContent.Load<Texture2D>("Sprites/abilitybar");
-            button1 = new GuiButton(new Vector2(200,400), "Sprites/button_template", 48, 48, 0);
-            button2 = new GuiButton(new Vector2(248, 400), "Sprites/button_template", 48, 48, 0);
+            button1 = new GuiButton(new Vector2(300,400), "Sprites/button_template", 48, 48, 0);
+            button1.Enabled = true;
+            button2 = new GuiButton(new Vector2(348, 400), "Sprites/button_template", 48, 48, 1);
+            button2.Enabled = true;
+            buttonList = new List<GuiButton>();
+            buttonList.Add(button1);
+            buttonList.Add(button2);
         }
          
         public void  setAbility(int id, IAbility newAbility)
@@ -54,8 +60,6 @@ namespace Zany_Zebras
             {
                 abilities.Add(id, newAbility);
             }
-            button1.AbilityID = id;
-            button1.ButtonImage = newAbility.image;
         }
 
         public IAbility getAbility(int id)
@@ -65,13 +69,28 @@ namespace Zany_Zebras
             return null;
         }
 
+        public GuiButton abilityBoundingBox(Point p)
+        {
+            foreach (GuiButton b in buttonList)
+            {
+                if (p.X > b.BoundingBox.X && p.X < (b.BoundingBox.X + b.BoundingBox.Width)
+                        && p.Y > b.BoundingBox.Y && p.Y < (b.BoundingBox.Y + b.BoundingBox.Height))
+                {
+                    return b;
+                }
+            }
+            return null;
+        }
+
         public void Render()
         {
             Game1.Instance.SpriteBatch.Draw(bar, new Rectangle((int)position.X - 2, (int)position.Y - 2, 100, 50), Color.Black);
             //for (int x = 1; x <= 1; x++)
                // abilities[x].Render();
-            button1.Render();
-            button2.Render();
+            foreach (GuiButton b in buttonList)
+            {
+                b.Render();
+            }
         }
 
         public void Update(GameTime gameTime)
