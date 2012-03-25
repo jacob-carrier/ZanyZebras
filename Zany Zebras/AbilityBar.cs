@@ -77,7 +77,7 @@ namespace Zany_Zebras
             return null;
         }
 
-        public GuiButton abilityBoundingBox(Point p)
+        public GuiButton abilityButton(Point p)
         {
             foreach (GuiButton b in buttonList)
             {

@@ -74,6 +74,20 @@ namespace Zany_Zebras
             }
         }
 
+        private int cost;
+        public int Cost
+        {
+            get
+            {
+                return cost;
+            }
+
+            set
+            {
+                cost = value;
+            }
+        }
+
         private Rectangle bounds;
         public Rectangle BoundingBox
         {
@@ -130,6 +144,7 @@ namespace Zany_Zebras
         public override void Update()
         {
             newState = Mouse.GetState();
+
             if (mouseReleased())
             {
                 if (dragging)

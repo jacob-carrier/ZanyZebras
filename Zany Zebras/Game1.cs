@@ -63,6 +63,20 @@ namespace Zany_Zebras
                 return abilityBar;
             }
         }
+
+        private int storePoints;
+        public int StorePoints
+        {
+            get
+            {
+                return storePoints;
+            }
+
+            set
+            {
+                storePoints = value;
+            }
+        }
         
         public Game1()
         {
@@ -71,6 +85,7 @@ namespace Zany_Zebras
             this.IsMouseVisible = true;
             graphics.PreferredBackBufferWidth = 800;
             graphics.PreferredBackBufferHeight = 600;
+            storePoints = 75;
             _instance = this;
         }
 

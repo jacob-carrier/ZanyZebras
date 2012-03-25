@@ -26,12 +26,13 @@ namespace Zany_Zebras
             if (mouseReleased())
             {
                 gpScreen.ShowMouseText = true;
-                if (newState.X > Game1.Instance.GameAbilityBar.Button1.BoundingBox.X && newState.X < (Game1.Instance.GameAbilityBar.Button1.BoundingBox.X + Game1.Instance.GameAbilityBar.Button1.BoundingBox.Width)
-                    && newState.Y > Game1.Instance.GameAbilityBar.Button1.BoundingBox.Y && newState.Y < (Game1.Instance.GameAbilityBar.Button1.BoundingBox.Y + Game1.Instance.GameAbilityBar.Button1.BoundingBox.Height))
+                GuiButton b = Game1.Instance.GameAbilityBar.abilityButton(new Point(newState.X, newState.Y));
+                if (b != null)
                 {
                     if (selectedAbility == null)
                     {
-                        selectedAbility = Game1.Instance.GameAbilityBar.getAbility(Game1.Instance.GameAbilityBar.Button1.AbilityID);
+                        Console.WriteLine(b.AbilityID);
+                        selectedAbility = Game1.Instance.GameAbilityBar.getAbility(b.AbilityID);
                     }
                 }
                 else
@@ -44,6 +45,7 @@ namespace Zany_Zebras
                         a.position = new Vector2(levelRef.Grid.getCell(X, Y).Position.X, levelRef.Grid.getCell(X, Y).Position.Y);
                         levelRef.Grid.setCell(a, newState.X / 40, newState.Y / 40);
                         levelRef.Grid.getCell(newState.X / 40, newState.Y / 40).Occupied = true;
+                        selectedAbility = null;
                     }
                 }
             }

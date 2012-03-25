@@ -27,9 +27,15 @@ namespace Zany_Zebras
             pitButton.Enabled = true;
             spikeButton = new GuiButton(new Vector2(156, 172), "Sprites/spikes_button", 48, 48, 1);
             spikeButton.Enabled = false;
+            spikeButton.Cost = 50;
+            spikeButton.Click += new GuiButton.ClickHandler(buyAbility);
+            spikeButton.Hover += new GuiButton.HoverHandler(showCost);
             lionButton = new GuiButton(new Vector2(248, 172), "Sprites/lion_button", 48, 48, 2);
-            spikeButton.Enabled = false;
-            gameButton = new GuiButton(new Vector2(600, 550), "Sprites/button", 193, 25, 0);
+            lionButton.Enabled = false;
+            lionButton.Cost = 100;
+            lionButton.Click += new GuiButton.ClickHandler(buyAbility);
+            lionButton.Hover += new GuiButton.HoverHandler(showCost);
+            gameButton = new GuiButton(new Vector2(500, 550), "Sprites/button", 193, 25, 0);
             gameButton.Enabled = true;
             gameButton.ChangeScreens += new GuiButton.GuiHandler(changeScreens);
             gameButton.Hover += new GuiButton.HoverHandler(gameButton_Hover);
@@ -77,8 +83,9 @@ namespace Zany_Zebras
                 Game1.Instance.SpriteBatch.Draw(draggedImage, new Rectangle(Mouse.GetState().X-24, Mouse.GetState().Y-24, 48, 48),new Rectangle(0,0,48,48), Color.White);
             }
             FontManager.Instance.Render(currentText, new Vector2(500,100));
+            FontManager.Instance.Render("Store Points: " + Game1.Instance.StorePoints, new Vector2(500, 16));
             string nextLevel = "Next Level";
-            FontManager.Instance.Render(nextLevel, new Vector2(gameButton.BoundingBox.X + gameButton.BoundingBox.Width / 4, gameButton.BoundingBox.Y + gameButton.BoundingBox.Height / 2 - 16) );
+            FontManager.Instance.Render(nextLevel, new Vector2(gameButton.BoundingBox.X + gameButton.BoundingBox.Width / 4, gameButton.BoundingBox.Y + gameButton.BoundingBox.Height / 2 - 12) );
         }
 
         private void addAbilityToBar(GuiButton b, ButtonArgs args)
@@ -106,7 +113,7 @@ namespace Zany_Zebras
         private void dropping(GuiButton b, ButtonArgs args)
         {
             Rectangle box = new Rectangle(Mouse.GetState().X - 24, Mouse.GetState().Y - 24, 48, 48);
-            GuiButton abilityBarButton = Game1.Instance.GameAbilityBar.abilityBoundingBox(new Point(Mouse.GetState().X, Mouse.GetState().Y));
+            GuiButton abilityBarButton = Game1.Instance.GameAbilityBar.abilityButton(new Point(Mouse.GetState().X, Mouse.GetState().Y));
             if (abilityBarButton != null)
             {
                 skillDragged = args.Dragged;
@@ -114,6 +121,7 @@ namespace Zany_Zebras
                 {
                     Console.WriteLine("Collided");
                     Game1.Instance.GameAbilityBar.setAbility(args.AbilityID, Game1.Instance.GameAbilityBar.AbilityList[args.AbilityID]);
+                    Console.WriteLine(args.AbilityID);
                     abilityBarButton.AbilityID = args.AbilityID;
                     abilityBarButton.ButtonImage = b.ButtonImage;
                 }
@@ -130,6 +138,30 @@ namespace Zany_Zebras
             //Game1.Instance.ScreenManager.currentScreen().Pause = true;
             Game1.Instance.ScreenManager.popScreen();
             Game1.Instance.ScreenManager.pushScreen(new GamePlayScreen());
+        }
+
+        private void buyAbility(GuiButton b, ButtonArgs args)
+        {
+            if (Game1.Instance.StorePoints >= b.Cost)
+            {
+                Game1.Instance.StorePoints -= b.Cost;
+                b.Enabled = true;
+                b.Click -= buyAbility;
+                b.Hover -= showCost;
+                b.Click += new GuiButton.ClickHandler(addAbilityToBar);
+                b.Hover += new GuiButton.HoverHandler(changeText);
+                b.Drag += new GuiButton.DraggingHandler(dragging);
+                b.Drop += new GuiButton.DropHandler(dropping);
+            }
+            else
+            {
+                currentText = "Not enough store points!";
+            }
+        }
+
+        private void showCost(GuiButton b, ButtonArgs args)
+        {
+            currentText = "Ability Cost: " + b.Cost + " Store Points\n" + abilityDesc[args.AbilityID];
         }
     }
 }
