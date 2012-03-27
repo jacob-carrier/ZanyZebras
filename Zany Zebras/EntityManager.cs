@@ -9,6 +9,13 @@ namespace Zany_Zebras
     class EntityManager
     {
         private List<Zebra> entities;
+        public List<Zebra> EntityList
+        {
+            get
+            {
+                return entities;
+            }
+        }
         private Level levelInstance;
 
         private EntityManager _instance;
@@ -33,18 +40,24 @@ namespace Zany_Zebras
 
         public void Update(GameTime gameTime)
         {
-            foreach (Zebra z in entities)
+            for (int i = 0; i < entities.Count; i++)
             {
-                z.Update(gameTime);
-                Console.WriteLine("Center X: " + z.Center.X + " Center Y: " + z.Center.Y);
-                if (levelInstance.Grid.getCell(z.Center.X / 40, z.Center.Y / 40).Occupied)
+                entities[i].Update(gameTime);
+                Console.WriteLine("Center X: " + entities[i].Center.X + " Center Y: " + entities[i].Center.Y);
+                if (levelInstance.Grid.getCell(entities[i].Center.X / 40, entities[i].Center.Y / 40).Occupied)
                 {
-                    if (z.BoundingBox.Intersects(levelInstance.Grid.getCell(z.Center.X / 40, z.Center.Y / 40).BoundingBox))
+                    if (entities[i].BoundingBox.Intersects(levelInstance.Grid.getCell(entities[i].Center.X / 40, entities[i].Center.Y / 40).BoundingBox))
                     {
                         // Do stuff with the ability AbillityEvent function that takes a zebra
-                        levelInstance.Grid.getAbility(z.Center.X / 40, z.Center.Y / 40).gameEvent(z);
+                        levelInstance.Grid.getAbility(entities[i].Center.X / 40, entities[i].Center.Y / 40).gameEvent(entities[i]);
                         Console.WriteLine("Zebra intersected");
                     }
+                }
+
+                if (entities[i].Health <= 0)
+                {
+                    entities.Remove(entities[i]);
+                    Game1.Instance.StorePoints += 20;
                 }
             }
         }

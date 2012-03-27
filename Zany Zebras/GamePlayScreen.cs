@@ -68,6 +68,19 @@ namespace Zany_Zebras
             input.Update();
             Game1.Instance.GameAbilityBar.Update(gameTime);
             entityManager.Update(gameTime);
+            for (int i = 0; i < entityManager.EntityList.Count; i++)
+            {
+                if (entityManager.EntityList[i].BoundingBox.X >= Game1.Instance.Window.ClientBounds.X + Game1.Instance.Window.ClientBounds.Width)
+                {
+                    entityManager.EntityList.RemoveAt(i);
+                }
+            }
+
+            if (entityManager.EntityList.Count == 0)
+            {
+                Game1.Instance.ScreenManager.popScreen();
+                Game1.Instance.ScreenManager.currentScreen().Pause = false;
+            }
         }
 
         public override void Render()

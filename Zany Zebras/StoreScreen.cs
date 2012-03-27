@@ -136,7 +136,8 @@ namespace Zany_Zebras
         {
             //Game1.Instance.ScreenManager.currentScreen().Block = true;
             //Game1.Instance.ScreenManager.currentScreen().Pause = true;
-            Game1.Instance.ScreenManager.popScreen();
+            //Game1.Instance.ScreenManager.popScreen();
+            Game1.Instance.ScreenManager.currentScreen().Pause = true;
             Game1.Instance.ScreenManager.pushScreen(new GamePlayScreen());
         }
 
