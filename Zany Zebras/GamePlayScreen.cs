@@ -70,7 +70,7 @@ namespace Zany_Zebras
             entityManager.Update(gameTime);
             for (int i = 0; i < entityManager.EntityList.Count; i++)
             {
-                if (entityManager.EntityList[i].BoundingBox.X >= Game1.Instance.Window.ClientBounds.X + Game1.Instance.Window.ClientBounds.Width)
+                if (entityManager.EntityList[i].BoundingBox.X >= Game1.Instance.Window.ClientBounds.Width)
                 {
                     entityManager.EntityList.RemoveAt(i);
                 }

@@ -29,7 +29,7 @@ namespace Zany_Zebras
 
         public override void gameEvent(Zebra z)
         {
-            z.Health -= 20;
+            z.Health -= .5f;
             Console.WriteLine("Zebra's Health: " + z.Health);
         }
     }

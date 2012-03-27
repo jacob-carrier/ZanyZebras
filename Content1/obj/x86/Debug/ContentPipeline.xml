@@ -100,6 +100,24 @@
       <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\pit.xnb</Output>
       <Time>2012-03-22T13:57:34.6241-04:00</Time>
     </Item>
+    <Item>
+      <Source>GUI\healthbar.png</Source>
+      <Name>GUI\healthbar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\GUI\healthbar.xnb</Output>
+      <Time>2012-03-27T14:11:55.963-04:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\healthbar_inner.png</Source>
+      <Name>GUI\healthbar_inner</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\GUI\healthbar_inner.xnb</Output>
+      <Time>2012-03-27T14:12:56.908-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

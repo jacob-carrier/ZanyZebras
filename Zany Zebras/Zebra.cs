@@ -10,11 +10,11 @@ namespace Zany_Zebras
     public class Zebra
     {
         
-        private Texture2D sheet;
+        private Texture2D sheet, healthBar, healthInner;
         private Dictionary<String, Animation> animations;
         private string currentAnim;
         private Vector2 position, movement, direction;
-        private int health;
+        private float health;
         private Rectangle bounds;
         private float elapsedTime;
         private Random random;
@@ -22,6 +22,8 @@ namespace Zany_Zebras
         public Zebra(Texture2D image, int posX, int posY)
         {
             sheet = image;
+            healthBar = Game1.Instance.gameContent.Load<Texture2D>("GUI/healthbar");
+            healthInner = Game1.Instance.gameContent.Load<Texture2D>("GUI/healthbar_inner");
             position = new Vector2(posX, posY);
             movement = new Vector2(1, 1);
             direction = new Vector2(1, 0);
@@ -80,7 +82,7 @@ namespace Zany_Zebras
             }
         }
 
-        public int Health
+        public float Health
         {
             get
             {
@@ -105,9 +107,9 @@ namespace Zany_Zebras
             }
             position += movement * direction;
 
-            if (position.Y < 0)
+            if (position.Y - healthBar.Height < 0)
             {
-                position.Y = 0;
+                position.Y = healthBar.Height;
             }
 
             if (position.Y >= Game1.Instance.Window.ClientBounds.Y + Game1.Instance.Window.ClientBounds.Height)
@@ -120,6 +122,8 @@ namespace Zany_Zebras
 
         public void Render()
         {
+            Game1.Instance.SpriteBatch.Draw(healthBar, new Vector2(position.X, position.Y-healthBar.Height), Color.White);
+            Game1.Instance.SpriteBatch.Draw(healthInner, new Rectangle((int)position.X, (int)position.Y - healthBar.Height, (int)(healthInner.Width * (health/20)), healthInner.Height), Color.White);
             Game1.Instance.SpriteBatch.Draw(sheet, position, animations[currentAnim].getFrame, Color.White);
         }
 
