@@ -57,8 +57,10 @@ namespace Zany_Zebras
         public override void Update(GameTime gameTime)
         {
             input.Update();
+            _levelInstance.Update(gameTime);
             Game1.Instance.GameAbilityBar.Update(gameTime);
             entityManager.Update(gameTime);
+
             for (int i = 0; i < entityManager.EntityList.Count; i++)
             {
                 if (entityManager.EntityList[i].BoundingBox.X >= Game1.Instance.Window.ClientBounds.Width)
@@ -81,13 +83,24 @@ namespace Zany_Zebras
             Game1.Instance.GameAbilityBar.Render();
             if (renderTileOutline)
             {
-                if (_levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40).Occupied)
+                if (_levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40).Occupied && _levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40).Ability != null)
                 {
-                    Utils.Instance.drawTileOutline(_levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40), new Vector4(255,0,0,.2f));
+                    Rectangle dest = new Rectangle(_levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40).BoundingBox.X, _levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40).BoundingBox.Y,
+                        _levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40).BoundingBox.Width ,
+                        _levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40).BoundingBox.Height);
+                    Game1.Instance.SpriteBatch.Draw(Game1.Instance.gameContent.Load<Texture2D>("Sprites/outline"), dest, new Color(new Vector4(255, 0, 0, .2f)));
+                    //Utils.Instance.drawTileOutline(_levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40), new Vector4(255,0,0,.2f));
                 }
                 else
                 {
-                    Utils.Instance.drawTileOutline(_levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40), new Vector4(0, 255, 0, .2f));
+                    if (input.SelectedAbility != null)
+                    {
+                        Rectangle dest = new Rectangle(_levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40).BoundingBox.X, _levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40).BoundingBox.Y,
+                            _levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40).BoundingBox.Width * input.SelectedAbility.XTiles,
+                            _levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40).BoundingBox.Height * input.SelectedAbility.YTiles);
+                        Game1.Instance.SpriteBatch.Draw(Game1.Instance.gameContent.Load<Texture2D>("Sprites/outline"), dest, new Color(new Vector4(0, 255, 0, .2f)));
+                        //Utils.Instance.drawTileOutline(_levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40), new Vector4(0, 255, 0, .2f));
+                    }
                 }
             }
         }

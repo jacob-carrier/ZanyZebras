@@ -11,3 +11,9 @@ Zebra Resources\Sprites\button.xnb
 Zebra Resources\Sprites\pit.xnb
 Zebra Resources\GUI\healthbar.xnb
 Zebra Resources\GUI\healthbar_inner.xnb
+Zebra Resources\Sprites\spikes.xnb
+Zebra Resources\Sprites\nuke_reference.xnb
+Zebra Resources\Sprites\nuke_button.xnb
+Zebra Resources\GUI\title_screen.xnb
+Zebra Resources\GUI\store_screen.xnb
+Zebra Resources\GUI\store_side.xnb

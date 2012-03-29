@@ -99,7 +99,7 @@ namespace Zany_Zebras
         {
             // TODO: Add your initialization logic here
             screenManager = new ScreenManager();
-            screenManager.pushScreen(new StoreScreen());
+            screenManager.pushScreen(new TitleScreen());
 
             abilityBar = new AbilityBar(300, 550);
             //abilityBar.setAbility(1, new Pit(new Vector2(200, 400)));

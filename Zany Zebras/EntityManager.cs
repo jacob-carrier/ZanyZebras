@@ -8,8 +8,6 @@ namespace Zany_Zebras
 {
     class EntityManager
     {
-
-        private float elapsedTime;
         private List<Zebra> entities;
         public List<Zebra> EntityList
         {
@@ -55,10 +53,12 @@ namespace Zany_Zebras
                         Console.WriteLine("Zebra intersected");
                     }
 
-                    if (levelInstance.Grid.getCell(entities[i].Center.X / 40, entities[i].Center.Y / 40).Type == "Object")
+                    if (levelInstance.Grid.getCell((entities[i].Center.X / 40)+1, entities[i].Center.Y / 40).Type == "Object")
                     {
-                        Random random = new Random();
-                       entities[i].Direction = new Vector2(0, random.Next(-2, 2));
+                       Random random = new Random();
+                       int x = random.Next(-2, 2);
+                       int y = random.Next(-2, 2);
+                       entities[i].Direction = new Vector2(x, y);
                     }
                 }
 

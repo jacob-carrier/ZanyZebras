@@ -73,6 +73,17 @@ namespace Zany_Zebras
             grid[y, x].Occupied = true;
         }
 
+        public void Update(GameTime gameTime)
+        {
+            for (int y = 0; y < mapHeight; y++)
+            {
+                for (int x = 0; x < mapWidth; x++)
+                {
+                    grid[y, x].UpdateAbility(gameTime);
+                }
+            }
+        }
+
         public void Render()
         {
             for(int y = 0; y < mapHeight; y++)

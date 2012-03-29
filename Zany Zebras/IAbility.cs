@@ -12,7 +12,10 @@ namespace Zany_Zebras
         public Texture2D image;
         public Vector2 position;
         public Rectangle dest;
-        public int damage;
+        public float damage;
+        public Boolean done = false;
+
+        public int XTiles, YTiles;
 
         public virtual void Render() { }
         public virtual void Update(GameTime gameTime) { }

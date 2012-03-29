@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
 
 namespace Zany_Zebras
 {
@@ -33,6 +34,11 @@ namespace Zany_Zebras
             
             //Go to store screen for player to buy new skills
 
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            grid.Update(gameTime);
         }
 
         public void Render()

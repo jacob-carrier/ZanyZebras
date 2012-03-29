@@ -12,6 +12,13 @@ namespace Zany_Zebras
         private Level levelRef;
         private GamePlayScreen gpScreen;
         private IAbility selectedAbility;
+        public IAbility SelectedAbility
+        {
+            get
+            {
+                return selectedAbility;
+            }
+        }
         public GameInput(GamePlayScreen screen, Level level)
         {
             levelRef = level;
@@ -44,8 +51,14 @@ namespace Zany_Zebras
                             int X = newState.X / 40;
                             int Y = newState.Y / 40;
                             a.position = new Vector2(levelRef.Grid.getCell(X, Y).Position.X, levelRef.Grid.getCell(X, Y).Position.Y);
-                            levelRef.Grid.setCell(a, newState.X / 40, newState.Y / 40);
-                            levelRef.Grid.getCell(newState.X / 40, newState.Y / 40).Occupied = true;
+                            for (int i = (newState.Y / 40); i < (newState.Y / 40) + a.YTiles; i++)
+                            {
+                                for (int j = (newState.X / 40); j < (newState.X / 40) + a.XTiles; j++)
+                                {
+                                    levelRef.Grid.setCell(a, j, i);
+                                    levelRef.Grid.getCell(j, i).Occupied = true;
+                                }
+                            }
                             selectedAbility = null;
                         }
                     }

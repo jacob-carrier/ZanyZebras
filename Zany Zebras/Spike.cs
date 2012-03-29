@@ -7,15 +7,15 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Zany_Zebras
 {
-    class Pit : IAbility
+    public class Spike : IAbility
     {
-        public Pit(Vector2 v)
+        public Spike(Vector2 v)
         {
-            image = Game1.Instance.gameContent.Load<Texture2D>("Sprites/pit");
+            image = Game1.Instance.gameContent.Load<Texture2D>("Sprites/spikes");
             position = v;
-            damage = 20;
+            damage = .5f;
             done = false;
-            XTiles = 4;
+            XTiles = 1;
             YTiles = 1;
         }
 
@@ -26,7 +26,7 @@ namespace Zany_Zebras
 
         public override void Render()
         {
-            dest = new Rectangle((int)position.X, (int)position.Y, 40, 40);
+            dest = new Rectangle((int)position.X, (int)position.Y, 48, 48);
             Game1.Instance.SpriteBatch.Draw(image, dest, new Rectangle(0, 0, 48, 48), Color.White);
         }
 

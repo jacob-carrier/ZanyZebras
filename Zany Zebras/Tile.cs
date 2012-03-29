@@ -98,5 +98,13 @@ namespace Zany_Zebras
                 ability.Render();
             }
         }
+
+        public void UpdateAbility(GameTime gameTime)
+        {
+            if (ability != null)
+            {
+                ability.Update(gameTime);
+            }
+        }
     }
 }

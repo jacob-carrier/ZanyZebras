@@ -11,7 +11,7 @@ namespace Zany_Zebras
     {
         List<IAbility> abilityList; // List of all possible abilities
         Dictionary<int, IAbility> abilities; // Abilities in the bar from 1-4
-        GuiButton button1, button2;
+        GuiButton button1, button2, button3;
         List<GuiButton> buttonList;
         Vector2 position;
         Texture2D bar;
@@ -44,7 +44,8 @@ namespace Zany_Zebras
         {
             abilityList = new List<IAbility>();
             abilityList.Add(new Pit(new Vector2(0, 0)));
-            abilityList.Add(new Pit(new Vector2(0, 0)));
+            abilityList.Add(new Spike(new Vector2(0, 0)));
+            abilityList.Add(new Nuke(new Vector2(0, 0)));
 
             abilities = new Dictionary<int,IAbility>();
             position = new Vector2(x, y);
@@ -53,9 +54,12 @@ namespace Zany_Zebras
             button1.Enabled = true;
             button2 = new GuiButton(new Vector2(348, 550), "Sprites/button_template", 48, 48, 1);
             button2.Enabled = true;
+            button3 = new GuiButton(new Vector2(396, 550), "Sprites/button_template", 48, 48, 2);
+            button3.Enabled = true;
             buttonList = new List<GuiButton>();
             buttonList.Add(button1);
             buttonList.Add(button2);
+            buttonList.Add(button3);
         }
          
         public void  setAbility(int id, IAbility newAbility)
@@ -92,7 +96,7 @@ namespace Zany_Zebras
 
         public void Render()
         {
-            Game1.Instance.SpriteBatch.Draw(bar, new Rectangle((int)position.X - 2, (int)position.Y - 2, 100, 50), Color.Black);
+            Game1.Instance.SpriteBatch.Draw(bar, new Rectangle((int)position.X - 2, (int)position.Y - 2, 150, 50), Color.Black);
             //for (int x = 1; x <= 1; x++)
                // abilities[x].Render();
             foreach (GuiButton b in buttonList)

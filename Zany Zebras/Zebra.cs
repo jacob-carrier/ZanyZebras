@@ -134,7 +134,14 @@ namespace Zany_Zebras
                 direction = new Vector2(1, 0);
             }
 
-
+            if (direction.X < 0)
+            {
+                currentAnim = "left";
+            }
+            else
+            {
+                currentAnim = "right";
+            }
             position += movement * direction;
 
             bounds = new Rectangle((int)position.X, (int)position.Y, animations[currentAnim].getFrame.Width, animations[currentAnim].getFrame.Height);
