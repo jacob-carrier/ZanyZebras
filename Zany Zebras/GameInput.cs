@@ -25,7 +25,6 @@ namespace Zany_Zebras
 
             if (mouseReleased())
             {
-                gpScreen.ShowMouseText = true;
                 GuiButton b = Game1.Instance.GameAbilityBar.abilityButton(new Point(newState.X, newState.Y));
                 if (b != null)
                 {
@@ -39,13 +38,16 @@ namespace Zany_Zebras
                 {
                     if (selectedAbility != null)
                     {
-                        IAbility a = (IAbility)selectedAbility.Clone();
-                        int X = newState.X / 40;
-                        int Y = newState.Y / 40;
-                        a.position = new Vector2(levelRef.Grid.getCell(X, Y).Position.X, levelRef.Grid.getCell(X, Y).Position.Y);
-                        levelRef.Grid.setCell(a, newState.X / 40, newState.Y / 40);
-                        levelRef.Grid.getCell(newState.X / 40, newState.Y / 40).Occupied = true;
-                        selectedAbility = null;
+                        if (!levelRef.Grid.getCell(newState.X / 40, newState.Y / 40).Occupied)
+                        {
+                            IAbility a = (IAbility)selectedAbility.Clone();
+                            int X = newState.X / 40;
+                            int Y = newState.Y / 40;
+                            a.position = new Vector2(levelRef.Grid.getCell(X, Y).Position.X, levelRef.Grid.getCell(X, Y).Position.Y);
+                            levelRef.Grid.setCell(a, newState.X / 40, newState.Y / 40);
+                            levelRef.Grid.getCell(newState.X / 40, newState.Y / 40).Occupied = true;
+                            selectedAbility = null;
+                        }
                     }
                 }
             }
@@ -53,8 +55,7 @@ namespace Zany_Zebras
             if (mouseUp())
             {
                 gpScreen.RenderTileOutline = true;
-            }            
-
+            }
             oldState = newState;
         }
     }

@@ -32,6 +32,19 @@ namespace Zany_Zebras
             random = new Random();
         }
 
+        public Vector2 Direction
+        {
+            get
+            {
+                return direction;
+            }
+
+            set
+            {
+                direction = value;
+            }
+        }
+
         public float X
         {
             get
@@ -105,7 +118,6 @@ namespace Zany_Zebras
                 direction = new Vector2(1, random.Next(-2, 2));
                 elapsedTime = 0;
             }
-            position += movement * direction;
 
             if (position.Y - healthBar.Height < 0)
             {
@@ -116,6 +128,14 @@ namespace Zany_Zebras
             {
                 position.Y = Game1.Instance.Window.ClientBounds.Y + Game1.Instance.Window.ClientBounds.Height;
             }
+
+            if (position.X <= 0)
+            {
+                direction = new Vector2(1, 0);
+            }
+
+
+            position += movement * direction;
 
             bounds = new Rectangle((int)position.X, (int)position.Y, animations[currentAnim].getFrame.Width, animations[currentAnim].getFrame.Height);
         }

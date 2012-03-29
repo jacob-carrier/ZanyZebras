@@ -18,6 +18,18 @@ namespace Zany_Zebras
         private int width;
         private int height;
         private Boolean occupied;
+        private string type;
+        public string Type
+        {
+            get
+            {
+                return type;
+            }
+            set
+            {
+                type = value;
+            }
+        }
 
         public Rectangle BoundingBox
         {
@@ -76,6 +88,11 @@ namespace Zany_Zebras
         {
             src = new Rectangle((int)tileId.X * width, (int)tileId.Y * height, width, height);
             Game1.Instance.SpriteBatch.Draw(sheet, position, src, Color.White);
+            
+        }
+
+        public void RenderAbility()
+        {
             if (ability != null)
             {
                 ability.Render();

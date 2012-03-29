@@ -21,15 +21,6 @@ namespace Zany_Zebras
             }
         }
 
-        private bool showMouseText = false;
-        public bool ShowMouseText
-        {
-            set
-            {
-                showMouseText = value;
-            }
-        }
-
         private Level _levelInstance;
         public Level LevelInstance
         {
@@ -88,14 +79,16 @@ namespace Zany_Zebras
             _levelInstance.Render();
             entityManager.Render();
             Game1.Instance.GameAbilityBar.Render();
-            if (showMouseText)
-            {
-                FontManager.Instance.Render("Mouse Position X: " + input.MousePosition.Y + " Mouse Position Y: " + input.MousePosition.Y, new Vector2(0, 16));
-            }
-
             if (renderTileOutline)
             {
-                Utils.Instance.drawTileOutline(_levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40));
+                if (_levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40).Occupied)
+                {
+                    Utils.Instance.drawTileOutline(_levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40), new Vector4(255,0,0,.2f));
+                }
+                else
+                {
+                    Utils.Instance.drawTileOutline(_levelInstance.Grid.getCell((int)input.MousePosition.X / 40, (int)input.MousePosition.Y / 40), new Vector4(0, 255, 0, .2f));
+                }
             }
         }
     }

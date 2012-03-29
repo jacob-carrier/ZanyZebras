@@ -53,13 +53,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sprites\map_tilesheet.png">
-      <Name>map_tilesheet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Sprites\outline.png">
       <Name>outline</Name>
       <Importer>TextureImporter</Importer>
@@ -121,6 +114,13 @@
   <ItemGroup>
     <Compile Include="GUI\healthbar_inner.png">
       <Name>healthbar_inner</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sprites\map_tilesheet.png">
+      <Name>map_tilesheet</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

@@ -28,9 +28,9 @@ namespace Zany_Zebras
 
         }
 
-        public void drawTileOutline(Tile t)
+        public void drawTileOutline(Tile t, Vector4 color)
         {
-            Game1.Instance.SpriteBatch.Draw(Game1.Instance.gameContent.Load<Texture2D>("Sprites/outline"), t.BoundingBox, Color.White);
+            Game1.Instance.SpriteBatch.Draw(Game1.Instance.gameContent.Load<Texture2D>("Sprites/outline"), t.BoundingBox, new Color(color));
         }
 
         public bool BoundingBoxCollision(Rectangle r1, Rectangle r2)

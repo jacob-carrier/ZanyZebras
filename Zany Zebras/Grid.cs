@@ -12,19 +12,44 @@ namespace Zany_Zebras
         private int mapWidth, mapHeight;
         private Tile[,] grid;
         private Texture2D tileSheet;
+        private Random random;
 
         public Grid(int width, int height)
         {
             mapWidth = width;
             mapHeight = height;
+            random = new Random();
             tileSheet = Game1.Instance.gameContent.Load<Texture2D>("Sprites/map_tilesheet");
             grid = new Tile[height, width];
+            Vector2 tileID = new Vector2(0,0);
+            bool blocked = false;
+            string type = "";
 
             for (int y = 0; y < mapHeight; y++)
             {
                 for (int x = 0; x < mapWidth; x++)
                 {
-                    grid[y, x] = new Tile(new Vector2(0,0), ref tileSheet, x, y, 40, 40);
+                    int percent = random.Next(100);
+                    if (percent < 5)
+                    {
+                        tileID = new Vector2(2,0);
+                        blocked = true;
+                        type = "Object";
+
+                    }
+                    else if (percent < 35 && percent > 5)
+                    {
+                        tileID = new Vector2(1, 0);
+                        blocked = false;
+                    }
+                    else
+                    {
+                        tileID = new Vector2(0, 0);
+                        blocked = false;
+                    }
+                    grid[y, x] = new Tile(tileID, ref tileSheet, x, y, 40, 40);
+                    grid[y, x].Occupied = blocked;
+                    grid[y, x].Type = type;
                 }
             }
         }
@@ -55,6 +80,14 @@ namespace Zany_Zebras
                 for (int x = 0; x < mapWidth; x++)
                 {
                     grid[y, x].Render();
+                }
+            }
+
+            for (int y = 0; y < mapHeight; y++)
+            {
+                for (int x = 0; x < mapWidth; x++)
+                {
+                    grid[y, x].RenderAbility();
                 }
             }
         }

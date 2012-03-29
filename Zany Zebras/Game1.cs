@@ -152,7 +152,7 @@ namespace Zany_Zebras
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
 
             screenManager.Render();
             spriteBatch.End();
