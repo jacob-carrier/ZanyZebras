@@ -146,15 +146,6 @@
       <Time>2012-03-29T15:31:34.9541-04:00</Time>
     </Item>
     <Item>
-      <Source>GUI\title_screen.png</Source>
-      <Name>GUI\title_screen</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\GUI\title_screen.xnb</Output>
-      <Time>2012-03-29T18:51:56.3391-04:00</Time>
-    </Item>
-    <Item>
       <Source>GUI\store_screen.png</Source>
       <Name>GUI\store_screen</Name>
       <Importer>TextureImporter</Importer>
@@ -198,6 +189,15 @@
       <Options>None</Options>
       <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\CrocButton.xnb</Output>
       <Time>2012-04-01T23:52:22.4137-04:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\Main Screen.png</Source>
+      <Name>GUI\Main Screen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\GUI\Main Screen.xnb</Output>
+      <Time>2012-04-02T08:59:53.0407-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -147,13 +147,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\title_screen.png">
-      <Name>title_screen</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="GUI\store_screen.png">
       <Name>store_screen</Name>
       <Importer>TextureImporter</Importer>
@@ -182,6 +175,13 @@
   <ItemGroup>
     <Compile Include="Sprites\CrocButton.png">
       <Name>CrocButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GUI\Main Screen.png">
+      <Name>Main Screen</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

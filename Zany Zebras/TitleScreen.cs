@@ -12,8 +12,8 @@ namespace Zany_Zebras
         GuiButton playButton;
         public TitleScreen()
         {
-            background = Game1.Instance.gameContent.Load<Texture2D>("GUI/title_screen");
-            playButton = new GuiButton(new Vector2(550, 300), "Sprites/button", 193, 25, 0);
+            background = Game1.Instance.gameContent.Load<Texture2D>("GUI/Main Screen");
+            playButton = new GuiButton(new Vector2(300, 500), "Sprites/button", 193, 25, 0);
             playButton.Enabled = true;
             playButton.Hover += new GuiButton.HoverHandler(playButton_Hover);
             playButton.ChangeScreens += new GuiButton.GuiHandler(playButton_ChangeScreens);
