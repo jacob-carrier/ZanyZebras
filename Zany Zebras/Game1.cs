@@ -85,7 +85,7 @@ namespace Zany_Zebras
             this.IsMouseVisible = true;
             graphics.PreferredBackBufferWidth = 800;
             graphics.PreferredBackBufferHeight = 600;
-            storePoints = 75;
+            storePoints = 25;
             _instance = this;
         }
 

@@ -7,27 +7,30 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Zany_Zebras
 {
-    public class Spike : IAbility
+    public class Croc : IAbility
     {
-        public Spike(Vector2 v)
+        private Animation anim;
+
+
+        public Croc(Vector2 v)
         {
-            image = Game1.Instance.gameContent.Load<Texture2D>("Sprites/spikes");
+            image = Game1.Instance.gameContent.Load<Texture2D>("Sprites/Crocodile");
             position = v;
-            damage = .3f;
-            done = false;
-            XTiles = 1;
+            damage = 1.3f;
+            anim = new Animation(3, 80, 40, 0);
+            XTiles = 2;
             YTiles = 1;
         }
 
         public override void Update(GameTime gameTime)
         {
-            
+            anim.Update(gameTime);
         }
 
         public override void Render()
         {
-            dest = new Rectangle((int)position.X, (int)position.Y, 48, 48);
-            Game1.Instance.SpriteBatch.Draw(image, dest, new Rectangle(0, 0, 48, 48), Color.White);
+            Rectangle dest = new Rectangle((int)position.X, (int)position.Y, 80, 40);
+            Game1.Instance.SpriteBatch.Draw(image, dest, anim.getFrame, Color.White);
         }
 
         public override void gameEvent(Zebra z)

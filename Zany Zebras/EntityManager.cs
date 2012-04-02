@@ -65,7 +65,7 @@ namespace Zany_Zebras
                 if (entities[i].Health <= 0)
                 {
                     entities.Remove(entities[i]);
-                    Game1.Instance.StorePoints += 20;
+                    Game1.Instance.StorePoints += 5;
                 }
             }
         }

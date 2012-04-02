@@ -15,7 +15,7 @@ namespace Zany_Zebras
             position = v;
             damage = 20;
             done = false;
-            XTiles = 4;
+            XTiles = 1;
             YTiles = 1;
         }
 

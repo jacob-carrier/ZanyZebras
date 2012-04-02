@@ -14,7 +14,7 @@ namespace Zany_Zebras
         private List<GuiButton> buttons;
         private List<string> abilityDesc;
         private List<IAbility> abilities;
-        private GuiButton spikeButton, pitButton, lionButton, nukeButton, gameButton;
+        private GuiButton spikeButton, pitButton, lionButton, crocButton,nukeButton, gameButton;
         private string currentText ="";
         bool skillDragged = false;
         Texture2D draggedImage;
@@ -34,14 +34,19 @@ namespace Zany_Zebras
             spikeButton.Cost = 50;
             spikeButton.Click += new GuiButton.ClickHandler(buyAbility);
             spikeButton.Hover += new GuiButton.HoverHandler(showCost);
-            //lionButton = new GuiButton(new Vector2(248, 172), "Sprites/lion_button", 48, 48, 2);
-            //lionButton.Enabled = false;
-            //lionButton.Cost = 100;
-            //lionButton.Click += new GuiButton.ClickHandler(buyAbility);
-            //lionButton.Hover += new GuiButton.HoverHandler(showCost);
-            nukeButton = new GuiButton(new Vector2(248, 172), "Sprites/nuke_button", 48, 48, 2);
+            lionButton = new GuiButton(new Vector2(248, 172), "Sprites/lion_button", 48, 48, 2);
+            lionButton.Enabled = false;
+            lionButton.Cost = 80;
+            lionButton.Click += new GuiButton.ClickHandler(buyAbility);
+            lionButton.Hover += new GuiButton.HoverHandler(showCost);
+            crocButton = new GuiButton(new Vector2(202, 250), "Sprites/CrocButton", 48, 48, 3);
+            crocButton.Enabled = false;
+            crocButton.Cost = 130;
+            crocButton.Click += new GuiButton.ClickHandler(buyAbility);
+            crocButton.Hover += new GuiButton.HoverHandler(showCost);
+            nukeButton = new GuiButton(new Vector2(202, 350), "Sprites/nuke_button", 48, 48, 4);
             nukeButton.Enabled = false;
-            nukeButton.Cost = 50;
+            nukeButton.Cost = 250;
             nukeButton.Click += new GuiButton.ClickHandler(buyAbility);
             nukeButton.Hover += new GuiButton.HoverHandler(showCost);
             gameButton = new GuiButton(new Vector2(550, 550), "Sprites/button", 193, 25, 0);
@@ -50,13 +55,17 @@ namespace Zany_Zebras
             gameButton.Hover += new GuiButton.HoverHandler(gameButton_Hover);
             buttons.Add(pitButton);
             buttons.Add(spikeButton);
+            buttons.Add(lionButton);
+            buttons.Add(crocButton);
             buttons.Add(nukeButton);
 
             abilityDesc = new List<string>();
 
-            abilityDesc.Add("This is the pit ability");
-            abilityDesc.Add("This is the spike ability");
-            abilityDesc.Add("This is the Nuke ability");
+            abilityDesc.Add("Pit:\n\nDig a hole and send the\nzebras to their doom.");
+            abilityDesc.Add("Spikes:\n\nLay a bed of spikes to\nimpale the creatures inflicting\nsome damage.");
+            abilityDesc.Add("Lion:\n\nUnleash the fury of a lion to\nmaul down the zebras.");
+            abilityDesc.Add("Crocodile:\n\nSend the zebras to a deathroll\nas they enter the maw of\nthis creature.");
+            abilityDesc.Add("Nuke:\n\nEradicate the zebra race as\nwe know it.");
 
             for (int i = 0; i < buttons.Count; i++)
             {
@@ -173,7 +182,7 @@ namespace Zany_Zebras
 
         private void showCost(GuiButton b, ButtonArgs args)
         {
-            currentText = "Ability Cost: " + b.Cost + " Store Points\n" + abilityDesc[args.AbilityID];
+            currentText = abilityDesc[args.AbilityID] + "\n\nAbility Cost: " + b.Cost + " Store Points\n";
         }
     }
 }

@@ -112,6 +112,7 @@
   <ItemGroup>
     <Compile Include="AbilityBar.cs" />
     <Compile Include="Animation.cs" />
+    <Compile Include="Croc.cs" />
     <Compile Include="EntityManager.cs" />
     <Compile Include="FontManager.cs" />
     <Compile Include="GameInput.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="IAbility.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="Level.cs" />
+    <Compile Include="Lion.cs" />
     <Compile Include="Nuke.cs" />
     <Compile Include="PauseScreen.cs" />
     <Compile Include="Pit.cs" />

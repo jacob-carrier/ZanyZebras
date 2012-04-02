@@ -172,6 +172,33 @@
       <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\GUI\store_side.xnb</Output>
       <Time>2012-03-29T19:16:11.1341-04:00</Time>
     </Item>
+    <Item>
+      <Source>Sprites\Lion.png</Source>
+      <Name>Sprites\Lion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\Lion.xnb</Output>
+      <Time>2012-04-01T23:37:59.2797-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Crocodile.png</Source>
+      <Name>Sprites\Crocodile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\Crocodile.xnb</Output>
+      <Time>2012-04-01T23:37:59.2777-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\CrocButton.png</Source>
+      <Name>Sprites\CrocButton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Jacob\Documents\Code Projects\Zany Zebras - 2501\Zany Zebras\bin\x86\Debug\Zebra Resources\Sprites\CrocButton.xnb</Output>
+      <Time>2012-04-01T23:52:22.4137-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

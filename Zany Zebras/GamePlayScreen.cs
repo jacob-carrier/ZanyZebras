@@ -12,6 +12,7 @@ namespace Zany_Zebras
         private EntityManager entityManager;
         private GameInput input;
         private Zebra zebra1;
+        private Random random;
         private bool renderTileOutline = false;
         public bool RenderTileOutline
         {
@@ -41,17 +42,26 @@ namespace Zany_Zebras
         {
             //Pause = false;
             //Block = false;
+            random = new Random();
+            int numZebras = random.Next(3, 10); 
 
-            zebra1 = new Zebra(Game1.Instance.gameContent.Load<Texture2D>("Sprites/zebra_leftright"), 100, 100);
+            //zebra1 = new Zebra(Game1.Instance.gameContent.Load<Texture2D>("Sprites/zebra_leftright"), 100, 100);
             _levelInstance = new Level();
-            zebra1.addAnimation("right", new Animation(3, 64, 32, 0));
-            zebra1.addAnimation("left", new Animation(3, 64, 32, 1));
-            zebra1.CurrentAnimation = "right";
-
+            //zebra1.addAnimation("right", new Animation(3, 64, 32, 0));
+            //zebra1.addAnimation("left", new Animation(3, 64, 32, 1));
+            //zebra1.CurrentAnimation = "right";
             input = new GameInput(this, _levelInstance);
 
             entityManager = new EntityManager(_levelInstance);
-            entityManager.addEntity(zebra1);
+
+            for (int i = 0; i < numZebras; i++)
+            {
+                Zebra z = new Zebra(Game1.Instance.gameContent.Load<Texture2D>("Sprites/zebra_leftright"), 50, random.Next(0,500));
+                z.addAnimation("right", new Animation(3, 64, 32, 0));
+                z.addAnimation("left", new Animation(3, 64, 32, 1));
+                z.CurrentAnimation = "right";
+                entityManager.addEntity(z);
+            }
         }
 
         public override void Update(GameTime gameTime)
